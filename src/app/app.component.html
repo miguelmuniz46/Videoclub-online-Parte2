@@ -1,0 +1,28 @@
+<h2>Search Movies:</h2><br>
+
+<input #name type="text">
+
+<button type="button" class="btn btn-primary" (click)="search(name.value); name.value=''">Search</button><br><br>
+
+<div *ngFor="let movie of movies; let i = index">
+    <div *ngFor="let movie of movies; let i_movie = index">
+            <h2 *ngIf="i === i_movie"><strong><u>{{movie}}</u></strong></h2>
+    </div>
+    <div *ngFor="let year of years; let i_year = index">
+            <p *ngIf="i === i_year"><strong><u>Year</u>:</strong> {{year}}</p>
+    </div>
+    <div *ngFor="let director of directors; let i_director = index">
+            <p *ngIf="i === i_director"><strong><u>Director</u>:</strong> {{director}}</p>
+    </div>
+    <div *ngFor="let actor of actors; let i_actor = index">
+            <p *ngIf="i === i_actor"><strong><u>Actors</u>:</strong> {{actor}}</p>
+    </div>
+    <div *ngFor="let urlc of urlsc; let i_urlc = index">
+            <p *ngIf="i === i_urlc"><strong><u>Cover</u>: </strong><br><br><img [src]="urlc"></p>
+    </div>
+    <div *ngFor="let urly of urlsy; let i_urly = index">
+            <p *ngIf="i === i_urly"><strong><u>Watch movie</u>: </strong><br><br><iframe width="560" height="315" [src]="urly" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></p>
+    </div>
+    <br><hr style="height:15px" style="background-color: black"><br>
+</div>
+
